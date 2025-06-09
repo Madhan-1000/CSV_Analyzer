@@ -1,0 +1,1 @@
+Hi Guys this is a project that I made for analyzing a CSV dataset By Simply Dragging and Dropping by selecting file and using different ML Techniques to understand it.
