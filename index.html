@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhan's ML Lab</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body,
+    html {
+      height: 100%;
+      overflow: hidden;
+      background-color:white;
+    }
+
+    .intro-screen {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1s ease;
+      z-index: 1000;
+    }
+
+    .intro-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+      padding: 200px;
+    }
+
+    .intro-screen h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .enter-btn {
+      padding: 12px 24px;
+      background: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: transform 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      transform: scale(1.5);
+    }
+
+    .main-content {
+      display: none;
+      text-align: center;
+    }
+
+    .show-main {
+      display: block;
+    }
+
+    .logo {
+      filter: invert(2);
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+      gap: 20px;
+    }
+
+    .option {
+      width: 100px;
+      height: 100px;
+      font-weight: 500;
+      background-color: black;
+      color: white;
+      border: 2px solid rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+a {
+text-decoration: none;
+color: white;
+}
+.option:hover{
+  animation: hov 0.5s  0s 1 forwards ;
+  animation-timing-function: ease-out;
+}
+@keyframes hov {
+  0%{
+    scale: 1.0;
+  }
+  100%{
+    scale: 1.07;
+    translate: 0px -10px;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="intro-screen" id="intro">
+    <h1> Welcome to <img src="logo.svg" alt="Logo" class="logo"></h1>
+    <button class="enter-btn" onclick="enterSite()">Enter</button>
+  </div>
+
+  <div class="main-content" id="main">
+    <h2>CSV Analyzer</h2>
+    <p>Select Preferred Algorithm</p>
+
+    <div class="menu">
+      <div class="option">
+        <a href="#">
+          Linear Regression
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Multi Linear Regression
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Polynomial Regression
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Logistic Regression
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Polnomial Logistic Regression
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Sci-Kit Learn Library
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Tensor Flow
+      </div>
+      </a>
+      <div class="option">
+        <a href="#">
+          Py torch
+      </div>
+      </a>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
