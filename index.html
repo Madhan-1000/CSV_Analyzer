@@ -17,7 +17,7 @@
     html {
       height: 100%;
       overflow: hidden;
-      background-color:white;
+      background-image: url("assets/background.png");
     }
 
     .intro-screen {
@@ -32,6 +32,7 @@
       align-items: center;
       transition: opacity 1s ease;
       z-index: 1000;
+      
     }
 
     .intro-screen.hidden {
@@ -62,6 +63,7 @@
     .main-content {
       display: none;
       text-align: center;
+      background-blend-mode: color-burn;
     }
 
     .show-main {
@@ -90,29 +92,34 @@
       align-items: center;
       justify-content: center;
     }
-a {
-text-decoration: none;
-color: white;
-}
-.option:hover{
-  animation: hov 0.5s  0s 1 forwards ;
-  animation-timing-function: ease-out;
-}
-@keyframes hov {
-  0%{
-    scale: 1.0;
-  }
-  100%{
-    scale: 1.07;
-    translate: 0px -10px;
-  }
-}
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .option:hover {
+      animation: hov 0.5s 0s 1 forwards;
+      animation-timing-function: ease-out;
+    }
+
+    @keyframes hov {
+      0% {
+        scale: 1.0;
+      }
+
+      100% {
+        scale: 1.01;
+
+        translate: 0px -8px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="intro-screen" id="intro">
-    <h1> Welcome to <img src="logo.svg" alt="Logo" class="logo"></h1>
+    <h1> Welcome to <img src="assets/logo.svg" alt="Logo" class="logo"></h1>
     <button class="enter-btn" onclick="enterSite()">Enter</button>
   </div>
 
@@ -171,7 +178,7 @@ color: white;
 
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
