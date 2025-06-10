@@ -19,9 +19,36 @@ def allowed_file(filename):
 
 @app.route("/")
 def index():
-    
     return render_template("index.html")
 
+@app.route("/linear-regression")
+def linear_regression():
+    return render_template("linear-regression/index.html")
 
+@app.route("/linear_regression/upload",methods=["POST"])
+def linear_upload():
+    if "csv_file" not in request.files:
+        return "No file part",400
+    file=request.files["csv_file"]
+    
+    if file.filename=="":
+        return "No Selected File",400
+    if not allowed_file(file.filename):
+        return "Only CSV files are allowed", 400
+    
+    filename=secure_filename(file.filename)
+    filepath=os.path.join(app.config["UPLOAD_FOLDER"],filename)
+    file.save(filepath)
+    df=pd.read_csv(filepath)
+    rows, cols = df.shape
+    col_names = ', '.join(df.columns)
+
+    return (
+        f"""File uploaded successfully!
+        Filename: {filename}
+        Rows: {rows}
+        Columns: {cols}
+        Column Names: {col_names}"""
+    )
 if __name__=="__main__":
     app.run(debug=True)
