@@ -98,12 +98,11 @@
   <div class="main-content" id="main">
     <h2>CSV Analyzer-Linear Regression</h2>
 
-<form id="upload-form">
-  <label for="csvFile">Choose CSV:</label>
-  <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
-  <button type="submit">Upload & Run</button>
-</form>
-
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="csv_file">Choose CSV:</label>
+    <input type="file" name="csv_file" accept=".csv" required >
+    <button type="submit">Analyze CSV</button>
+  </form>
 <div id="result"></div>
 
 
@@ -117,7 +116,7 @@
       document.body.style.overflow = 'auto';
       setTimeout(() => {
         main.classList.add('show-main');
-      }, 0); // Matches the fade-out duration
+      }, 800); // Matches the fade-out duration
     }</script>
 
 
